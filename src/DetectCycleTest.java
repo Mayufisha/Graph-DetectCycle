@@ -8,6 +8,7 @@ public class DetectCycleTest {
         directedGraph.addEdge(3, 4);
         directedGraph.addEdge(4, 1); // cycle
 
+        directedGraph.printGraph();
         System.out.println("Cycle detected (should be true): " + directedGraph.hasCycleDirected());
 
         System.out.println("\n Directed Acyclic Graph (DAG) Test ");
@@ -17,6 +18,7 @@ public class DetectCycleTest {
         dag.addEdge(3, 4);
         dag.addEdge(2, 3);
 
+        dag.printGraph();
         System.out.println("Cycle detected (should be false): " + dag.hasCycleDirected());
     }
 }
