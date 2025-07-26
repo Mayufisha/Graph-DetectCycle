@@ -42,4 +42,17 @@ public class DetectCycle {
         recStack.remove(node);
         return false;
     }
+    public void printGraph() {
+        System.out.println("Graph adjacency list:");
+        for (Map.Entry<Integer, List<Integer>> entry : adj.entrySet()) {
+            System.out.print(entry.getKey() + " -> ");
+            List<Integer> neighbors = entry.getValue();
+            for (int i = 0; i < neighbors.size(); i++) {
+                System.out.print(neighbors.get(i));
+                if (i != neighbors.size() - 1) System.out.print(", ");
+            }
+            System.out.println();
+        }
+    }
+
 }
