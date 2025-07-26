@@ -4,7 +4,8 @@ public class DetectCycle {
     private Map<Integer, List<Integer>> adj = new HashMap<>();
     private boolean directed;
 
-    public void Graph(boolean directed) {
+
+    public DetectCycle(boolean directed) {
         this.directed = directed;
     }
 
