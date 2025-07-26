@@ -5,7 +5,8 @@ public class DetectCycleTest {
         directedGraph.addEdge(0, 1);
         directedGraph.addEdge(1, 2);
         directedGraph.addEdge(2, 3);
-        directedGraph.addEdge(3, 1); // cycle
+        directedGraph.addEdge(3, 4);
+        directedGraph.addEdge(4, 1); // cycle
 
         System.out.println("Cycle detected (should be true): " + directedGraph.hasCycleDirected());
 
@@ -13,6 +14,7 @@ public class DetectCycleTest {
         DetectCycle dag = new DetectCycle(true);
         dag.addEdge(0, 1);
         dag.addEdge(1, 2);
+        dag.addEdge(3, 4);
         dag.addEdge(2, 3);
 
         System.out.println("Cycle detected (should be false): " + dag.hasCycleDirected());
