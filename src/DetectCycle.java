@@ -1,8 +1,10 @@
+import java.util.*;
+
 public class DetectCycle {
     private Map<Integer, List<Integer>> adj = new HashMap<>();
     private boolean directed;
 
-    public Graph(boolean directed) {
+    public void Graph(boolean directed) {
         this.directed = directed;
     }
 
