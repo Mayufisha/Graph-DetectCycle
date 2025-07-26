@@ -25,4 +25,18 @@ public class DetectCycle {
         return false;
     }
 
+    private boolean dfsCycle(int node, Set<Integer> visited, Set<Integer> recStack) {
+        if (recStack.contains(node)) return true;  // back edge -> cycle
+        if (visited.contains(node)) return false;  // already processed
+
+        visited.add(node);
+        recStack.add(node);
+
+        for (int neighbor : adj.getOrDefault(node, new ArrayList<>())) {
+            if (dfsCycle(neighbor, visited, recStack)) return true;
+        }
+
+        recStack.remove(node);
+        return false;
+    }
 }
