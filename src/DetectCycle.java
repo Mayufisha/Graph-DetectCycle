@@ -12,4 +12,17 @@ public class DetectCycle {
             adj.computeIfAbsent(dest, k -> new ArrayList<>()).add(src);
         }
     }
+    // Detect cycle using DFS for directed graph
+    public boolean hasCycleDirected() {
+        Set<Integer> visited = new HashSet<>();
+        Set<Integer> recStack = new HashSet<>();
+
+        for (int node : adj.keySet()) {
+            if (dfsCycle(node, visited, recStack)) {
+                return true; // cycle detected
+            }
+        }
+        return false;
+    }
+
 }
